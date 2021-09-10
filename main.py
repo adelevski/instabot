@@ -20,5 +20,5 @@ def main():
     print("Finished liking!")
 
 
-if __name__ == __main__():
+if __name__ == "__main__":
     main()
