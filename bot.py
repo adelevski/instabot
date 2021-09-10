@@ -25,10 +25,12 @@ class InstaBot:
 
         # Get past first 9 photos which are under "Top Posts" since we only want to like "Recent Posts"
         for i in range(9):
-            time.sleep(0.5)
+            time.sleep(2)
             self.bot.find_element_by_class_name('coreSpriteRightPaginationArrow').click()
-        
+            
         for i in range(amount):
-            time.sleep(3)
+            time.sleep(2)
             self.bot.find_element_by_class_name('fr66n').click()
+            time.sleep(2)
             self.bot.find_element_by_class_name('coreSpriteRightPaginationArrow').click()
+            
