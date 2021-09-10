@@ -27,10 +27,12 @@ class InstaBot:
         for i in range(9):
             time.sleep(2)
             self.bot.find_element_by_class_name('coreSpriteRightPaginationArrow').click()
-            
+
+        successful_likes = 0 
         for i in range(amount):
             time.sleep(2)
             self.bot.find_element_by_class_name('fr66n').click()
+            successful_likes += 1
             time.sleep(2)
             self.bot.find_element_by_class_name('coreSpriteRightPaginationArrow').click()
-            
+        return successful_likes

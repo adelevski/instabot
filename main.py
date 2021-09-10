@@ -16,9 +16,9 @@ def main():
     time.sleep(3)
 
     # Start liking photos
-    instabot.like_photos(50)
+    successful_likes = instabot.like_photos(50)
 
-    print("Finished liking!")
+    print(f"Liked {successful_likes} likes!")
 
 
 if __name__ == "__main__":
