@@ -15,7 +15,7 @@ class InstaBot:
 
     def login(self):
         self.bot.get('https://instagram.com/accounts/login')
-        time.sleep(3)
+        time.sleep(5)
         self.bot.find_element_by_name('username').send_keys(self.username)
         time.sleep(1)
         self.bot.find_element_by_name('password').send_keys(self.password)
