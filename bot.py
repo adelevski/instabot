@@ -3,24 +3,25 @@ from selenium.webdriver.chrome.options import Options
 import time
 
 
-options = Options()
-options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-options.add_argument("enable-automation")
-options.add_argument("--disable-infobars")
-options.add_argument("--disable-dev-shm-usage")
+
 
 
 class InstaBot:
     def __init__(self, username, password, driver_path):
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("enable-automation")
+        options.add_argument("--disable-infobars")
+        options.add_argument("--disable-dev-shm-usage")
         self.username = username
         self.password = password
         self.bot = webdriver.Chrome(options=options)
         # self.bot = webdriver.Chrome(executable_path=driver_path)
 
     def login(self):
-        self.bot.get('https://instagram.com/')
+        self.bot.get('https://www.instagram.com/accounts/login/')
         time.sleep(5)
         self.bot.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(self.username)
         time.sleep(1)
