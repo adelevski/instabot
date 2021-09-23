@@ -27,14 +27,14 @@ class InstaBot:
         for i in range(9):
             time.sleep(2)
             self.bot.find_element_by_class_name('coreSpriteRightPaginationArrow').click()
-		    print(f"Skipped {i+1} top posts")
+            print(f"Skipped {i+1} top posts")
 
         successful_likes = 0
         for i in range(amount):
             time.sleep(2)
             self.bot.find_element_by_class_name('fr66n').click()
-		    print(f"Liked {i+1} recent posts!")
-		    successful_likes += 1
+            print(f"Liked {i+1} recent posts!")
+            successful_likes += 1
             time.sleep(2)
             self.bot.find_element_by_class_name('coreSpriteRightPaginationArrow').click()
         return successful_likes
