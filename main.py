@@ -9,7 +9,7 @@ def main():
 
     # Open browser and login and then wait 3 seconds for things to load
     instabot.login()
-    time.sleep(3)
+    time.sleep(4)
 
     # Switch to explore page and to the specific hashtag, and wait again for things to load
     instabot.search_hashtag('climbing')

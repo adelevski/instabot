@@ -17,13 +17,14 @@ class InstaBot:
         self.username = username
         self.password = password
         self.bot = webdriver.Chrome(options=options)
+        # self.bot = webdriver.Chrome(executable_path=driver_path)
 
     def login(self):
         self.bot.get('https://instagram.com/accounts/login')
         time.sleep(5)
-        self.bot.find_element_by_name('username').send_keys(self.username)
+        self.bot.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(self.username)
         time.sleep(1)
-        self.bot.find_element_by_name('password').send_keys(self.password)
+        self.bot.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(self.password)
         time.sleep(1)
         self.bot.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button').click()
 
