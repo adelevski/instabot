@@ -20,7 +20,7 @@ class InstaBot:
         # self.bot = webdriver.Chrome(executable_path=driver_path)
 
     def login(self):
-        self.bot.get('https://instagram.com/accounts/login')
+        self.bot.get('https://instagram.com/')
         time.sleep(5)
         self.bot.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(self.username)
         time.sleep(1)
