@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import time
 
 
@@ -6,6 +7,8 @@ class InstaBot:
     def __init__(self, username, password, driver_path):
         self.username = username
         self.password = password
+        self.chrome_options = Options()
+        self.chrome_options.add_argument('--no-sandbox')
         self.bot = webdriver.Chrome(executable_path=driver_path)
 
     def login(self):
