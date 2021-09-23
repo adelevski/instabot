@@ -9,7 +9,9 @@ class InstaBot:
         self.password = password
         self.chrome_options = Options()
         self.chrome_options.add_argument('--no-sandbox')
-        self.bot = webdriver.Chrome(executable_path=driver_path)
+        self.chrome_options.add_argument('--headless')
+        self.chrome_options.add_argument('--disable-dev-shm-usage')
+        self.bot = webdriver.Chrome(executable_path=driver_path, chrome_options=self.chrome_options)
 
     def login(self):
         self.bot.get('https://instagram.com/accounts/login')
