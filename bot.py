@@ -8,16 +8,16 @@ import time
 
 class InstaBot:
     def __init__(self, username, password, driver_path):
-        # options = Options()
-        # options.add_argument("--headless")
-        # options.add_argument("--disable-gpu")
-        # options.add_argument("--no-sandbox")
-        # options.add_argument("enable-automation")
-        # options.add_argument("--disable-infobars")
-        # options.add_argument("--disable-dev-shm-usage")
+        options = Options()
+        options.add_argument("--headless")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("enable-automation")
+        options.add_argument("--disable-infobars")
+        options.add_argument("--disable-dev-shm-usage")
         self.username = username
         self.password = password
-        self.bot = webdriver.Chrome(executable_path=driver_path)
+        self.bot = webdriver.Chrome(chrome_options=options)
         # self.bot = webdriver.Chrome(executable_path=driver_path)
 
     def login(self):
