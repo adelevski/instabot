@@ -18,6 +18,7 @@ class InstaBot:
         self.username = username
         self.password = password
         self.bot = webdriver.Chrome(chrome_options=options)
+        self.bot = webdriver.Remote()
         # self.bot = webdriver.Chrome(executable_path=driver_path)
 
     def login(self):
