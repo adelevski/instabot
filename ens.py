@@ -40,4 +40,16 @@ class ENSBot:
         self.bot.find_element_by_xpath(f"/html/body/div[1]/div[4]/div/div[3]/div[4]/div[2]/div/div[2]/div/button[{str(button)}]").click()
 
 
-    
+    def check_1000(self, num):
+        self.bot.get(f"https://ens.tools/domains?perPage=250&showFilters=true&length_min=5&length_max=5&numbers=only&starts_with={num}")
+        time.sleep(3)
+        num = self.bot.find_element_by_xpath("/html/body/div[1]/div[4]/div/div[3]/div[1]/div[7]/div/div[1]/span[1]")
+        return num.text
+
+    def get_domains(self):
+        domains = []
+        table = self.bot.find_elements_by_xpath("//*[@class= 'w-full domains-table max-w-full']/tbody/tr")
+        for row in table:
+            domains.append(row.text.split('.')[0])
+        return domains
+        
